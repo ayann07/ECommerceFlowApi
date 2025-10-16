@@ -6,7 +6,7 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
 import lombok.RequiredArgsConstructor;
-import modules.user.repositories.UserRepository;
+import modules.user.repository.UserRepository;
 
 @Service
 // This is a Spring Framework annotation.
