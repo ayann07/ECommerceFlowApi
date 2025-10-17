@@ -29,7 +29,7 @@ import java.util.List;
 @Table(name = "app_user")
 // Specifies the actual table name in the database. "app_user" is used to avoid
 // conflicts with the reserved SQL keyword "user".
-public class UserModel implements UserDetails {
+public class User implements UserDetails {
     // By implementing UserDetails, this class can be used directly by Spring
     // Security.
 
