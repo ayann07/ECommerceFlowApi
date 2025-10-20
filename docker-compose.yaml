@@ -4,17 +4,17 @@ services:
   # Defines all the containers you want to run.
   # Each service is basically one container
   postgres:
-  # postgres → the name of this service (used for networking between containers).
+    # postgres → the name of this service (used for networking between containers).
     image: postgres:latest
     # image: postgres:latest → tells Docker to use the latest PostgreSQL image from Docker Hub.
     container_name: ECommerceFlowApi-db
     environment:
-      POSTGRES_DB: ECommerceFlowApi_db
+      POSTGRES_DB: ECommerceFlowApi-db
       POSTGRES_USER: ayan
       POSTGRES_PASSWORD: ayan
       # Sets environment variables inside the container:
     ports:
-      - "5432:5432"    # maps container port to your machine
+      - "5432:5432" # maps container port to your machine
     volumes:
       - postgres_data:/var/lib/postgresql/data
       # Creates a persistent storage for your database.
@@ -25,6 +25,6 @@ services:
     # If the container crashes or the Docker daemon restarts, it will automatically restart.
 volumes:
   postgres_data:
-  # Declares a named volume called postgres_data.
-  # Docker stores it on your system (outside the container).
-  # Used for persistent storage for your database.
+    # Declares a named volume called postgres_data.
+    # Docker stores it on your system (outside the container).
+    # Used for persistent storage for your database.
