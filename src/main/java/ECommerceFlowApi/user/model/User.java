@@ -4,17 +4,20 @@ import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
+import ECommerceFlowApi.common.BaseModel;
 import ECommerceFlowApi.user.enums.Role;
 
 import java.util.Collection;
 import java.util.List;
 
+@EqualsAndHashCode(callSuper = false)
 @Data
 // Generates all the boilerplate code: getters, setters, toString(), equals(),
 // and hashCode().
@@ -30,7 +33,7 @@ import java.util.List;
 @Table(name = "app_user")
 // Specifies the actual table name in the database. "app_user" is used to avoid
 // conflicts with the reserved SQL keyword "user".
-public class User implements UserDetails {
+public class User extends BaseModel implements UserDetails {
     // By implementing UserDetails, this class can be used directly by Spring
     // Security.
 
