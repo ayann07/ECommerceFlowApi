@@ -43,17 +43,23 @@ public class User extends BaseModel implements UserDetails {
     // Configures the primary key generation strategy to be auto-incrementing.
     private Long id;
 
+    @Column(nullable = false)
     private String firstName;
+
     private String lastName;
 
-    @Column(unique = true)
+    @Column(unique = true, nullable = false)
     private String email;
+
+    @Column(nullable = false)
     private String password;
 
     @Enumerated(EnumType.STRING)
     // Specifies that this enum should be stored as a String (e.g., "USER", "ADMIN")
     // in the database.
-    private Role role;
+    @Column(nullable = false)
+    @Builder.Default
+    private Role role = Role.USER;
 
     // --- UserDetails Interface Methods ---
 

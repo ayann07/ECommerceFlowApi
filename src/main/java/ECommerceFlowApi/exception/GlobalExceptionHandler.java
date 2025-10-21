@@ -30,7 +30,7 @@ public class GlobalExceptionHandler {
 
         // Handles specific exceptions for bad client request(400 Bad Request).
         @ExceptionHandler(BadRequestException.class)
-        public ResponseEntity<ErrorDetails> handleBadRequestException(ResourceNotFoundException ex,
+        public ResponseEntity<ErrorDetails> handleBadRequestException(BadRequestException ex,
                         WebRequest webRequest) {
 
                 ErrorDetails errorDetails = ErrorDetails.builder().message(ex.getMessage())
