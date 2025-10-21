@@ -15,6 +15,9 @@ public class ProductRequest {
     @NotNull(message = "Product name is required")
     private String name;
 
+    @NotBlank(message = "Product description is required")
+    private String description;
+
     @NotNull(message = "Price is required")
     @Positive(message = "Price must be positive")
     private BigDecimal price;

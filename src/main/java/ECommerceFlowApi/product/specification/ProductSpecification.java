@@ -25,6 +25,8 @@ public class ProductSpecification {
 
         Specification<Product> spec = Specification.unrestricted();
 
+        spec = spec.and((root, query, cb) -> cb.isFalse(root.get("deleted")));
+
         // We check each filter in the criteria object. If a filter is present,
         // we add a new condition to our specification using ".and()".
 
